@@ -4,25 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hola Mundo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap" rel="stylesheet">
   <style>
+    :root { --negro: #000; --rojo: #e10600; --blanco: #f5f5f5; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
       margin: 0;
-      min-height: 100vh;
       display: grid;
       place-items: center;
-      font-family: system-ui, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+      padding: 2rem;
+      background: var(--negro);
+      color: var(--blanco);
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
+      font-weight: 700;
       text-align: center;
     }
-    h1 { font-size: 3rem; margin: 0; }
-    p { color: #94a3b8; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    h1 span { color: var(--rojo); }
+    @media (prefers-reduced-motion: no-preference) {
+      h1 { animation: entra 0.8s ease-out both; }
+      @keyframes entra { from { opacity: 0; } to { opacity: 1; } }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>¡Hola, Mundo! 👋</h1>
-    <p>Desplegado automáticamente con GitHub Pages.</p>
-  </main>
+  <h1>Hola, <span>Mundo.</span></h1>
 </body>
 </html>
